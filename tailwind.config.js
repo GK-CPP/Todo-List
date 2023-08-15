@@ -4,13 +4,22 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        22 : "80px",
+        22: "80px",
       },
       screens: {
-        'xs': '13px', 
+        'xs': '13px',
+      },
+      keyframes: {
+        rotate360: {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
       },
     },
   },
   plugins: [],
 }
-
