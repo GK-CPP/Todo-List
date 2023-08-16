@@ -86,21 +86,26 @@
 
         <section class="flex relative w-10/12">
           <div
-            class="relative rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
+            id="index_input"
+            class="flex flex-col rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
           >
-            <div class="absolute mt-3 xs:ml-6 sm:ml-6 md:ml-9 lg:ml:10">
+            <div class="mt-3 xs:ml-6 sm:ml-6 md:ml-9 lg:ml:10">
               <input
-                class="xs:min-w-[210px] sm:min-w-[270px] md:min-w-[280px] lg:min-w-[290px] border-2 border-solid border-gray-400"
+                id="task-input"
+                class="min-w-[270px] md:min-w-[280px] lg:min-w-[290px] border-2 border-solid border-gray-400"
                 type="text"
                 placeholder="Write a new task"
                 value=""
               />
               <button
+                id="add-task-btn"
                 class="absolute ml-4 w-16 rounded-full transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 bg-orange-50 text-orange-500 font-bold text-center"
               >
                 ok
               </button>
             </div>
+
+            <div id="task" class="mt-3 px-3"></div>
           </div>
         </section>
       </main>
@@ -111,5 +116,7 @@
         <p class="py-2">&copy; 2023 Gulam Kibria. All rights reserved.</p>
       </footer>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
