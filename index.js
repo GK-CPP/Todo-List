@@ -13,14 +13,14 @@ function elementPush(textInput) {
 
   newH1.className = "border-2 border-solid border-gray-400 text-white";
   newH1.innerText = textInput._value;
-  console.log(textInput);
+  console.log(textInput._value);
   newDiv.appendChild(newH1);
   document.getElementById("task").appendChild(newDiv);
 }
 
 textButton.addEventListener("click", function () {
   const textInput = document.getElementById("task-input");
-
+  //console.log(textInput.value.length);
   if (textInput.value.length > 0) {
     const taskValue = textInput.value;
     textInput.value = "";
