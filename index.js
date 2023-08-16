@@ -6,14 +6,22 @@ function elementPush(textInput) {
   console.log(textInput);
   let newDiv = document.createElement("div");
   let newH1 = document.createElement("h1");
+  let imgElement = document.createElement("img");
+
+  imgElement.src = "image/checklist.png";
+  imgElement.alt = "Image description";
 
   newDiv.classList.add("flex");
-  newDiv.classList.add("flex-col");
   newDiv.classList.add("rounded-3xl");
+  imgElement.classList.add("w-8");
+  imgElement.classList.add("h-8");
+  imgElement.classList.add("mt-[1px]");
+  imgElement.classList.add("mr-2");
+  newH1.className = " border-gray-400 rounded-sm text-xl text-white";
 
-  newH1.className = "border-2 border-solid border-gray-400 text-white";
   newH1.innerText = textInput._value;
   console.log(textInput._value);
+  newDiv.appendChild(imgElement);
   newDiv.appendChild(newH1);
   document.getElementById("task").appendChild(newDiv);
 }
