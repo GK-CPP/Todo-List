@@ -23,95 +23,93 @@
   </head>
 
   <body
-    class="mx-[10px] font-[roboto,sans-serif] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] bg-no-repeat bg-fixed h-screen"
+    class="px-[10px] font-[roboto,sans-serif] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] bg-no-repeat bg-fixed h-screen"
   >
-    <nav class="flex max-w-full h-28">
-      <div class="relative w-full bg-[#a6c1ee] h-28">
-        <div
-          class="transition-transform transform hover:rotate-180 relative z-50 bg-orange-500 flex rotate-45 items-center mt-[22px] mx-auto rounded-2xl w-[100px] h-[100px]"
-        >
-          <h1
-            class="transition-transform transform hover:-rotate-180 absolute text-white -rotate-45 text-center p-[15px] text-2xl mx-auto font-bold"
+    <div class="flex flex-col min-h-screen">
+      <nav class="flex max-w-full h-28">
+        <div class="relative w-full bg-[#a6c1ee] h-28">
+          <div
+            class="transition-transform transform hover:rotate-180 relative z-50 bg-orange-500 flex rotate-45 items-center mt-[22px] mx-auto rounded-2xl w-[100px] h-[100px]"
           >
-            ToDo List
-          </h1>
-        </div>
-
-        <div
-          class="flex absolute w-full bg-pink-200 top-8 h-22 rounded-t-[30px] items-center justify-between box-border"
-        >
-          <img src="/image/manu.png" alt="manu" class="w-14 h-14 ml-[30px]" />
-
-          <img src="/image/icon.png" alt="Logo" class="w-8 h-8 mr-[30px]" />
-        </div>
-      </div>
-    </nav>
-
-    <main class="max-w-full max-h-full flex">
-      <aside class="flex relative w-2/12 justify-normal box-border">
-        <div class="w-full flex-col box-border space-y-3">
-          <a
-            href="index.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 mt-4 p-1 font-bold w-full block text-center"
-          >
-            My Tasks</a
-          >
-          <a
-            href="completed.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Completed</a
-          >
-          <a
-            href="recycle_bin.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Recycle Bin</a
-          >
-          <a
-            href="about.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            About</a
-          >
-          <a
-            href="contact.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Contact</a
-          >
-        </div>
-      </aside>
-
-      <section class="flex relative w-10/12">
-        <div
-          class="relative rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
-        >
-          <div class="absolute mt-3 xs:ml-6 sm:ml-6 md:ml-9 lg:ml:10">
-            <input
-              class="xs:min-w-[210px] sm:min-w-[270px] md:min-w-[280px] lg:min-w-[290px] border-2 border-solid border-gray-400"
-              type="text"
-              placeholder="Write a new task"
-              value=""
-            />
-            <button
-              class="absolute ml-4 w-16 rounded-full transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 bg-orange-50 text-orange-500 font-bold text-center"
+            <h1
+              class="transition-transform transform hover:-rotate-180 absolute text-white -rotate-45 text-center p-[15px] text-2xl mx-auto font-bold"
             >
-              ok
-            </button>
+              ToDo List
+            </h1>
+          </div>
+
+          <div
+            class="flex absolute w-full bg-pink-200 top-8 h-22 rounded-t-[30px] items-center justify-between box-border"
+          >
+            <img src="/image/manu.png" alt="manu" class="w-14 h-14 ml-[30px]" />
+
+            <img src="/image/icon.png" alt="Logo" class="w-8 h-8 mr-[30px]" />
           </div>
         </div>
-      </section>
-    </main>
+      </nav>
 
-    <!-- <nav class="max-w-full h-20 bg-pink-600 relative">
-      <div class="absolute flex items-center h-16 bg-slate-500 top-6 left-0">
-        <h1>this is a number</h1>
-      </div>
-    </nav> -->
+      <main class="max-w-full max-h-full flex">
+        <aside class="flex relative w-2/12 justify-normal box-border">
+          <div class="w-full flex-col box-border space-y-3">
+            <a
+              href="index.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 mt-4 p-1 font-bold w-full block text-center"
+            >
+              My Tasks</a
+            >
+            <a
+              href="completed.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Completed</a
+            >
+            <a
+              href="recycle_bin.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Recycle Bin</a
+            >
+            <a
+              href="about.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              About</a
+            >
+            <a
+              href="contact.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Contact</a
+            >
+          </div>
+        </aside>
 
-    <aside></aside>
+        <section class="flex relative w-10/12">
+          <div
+            class="relative rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
+          >
+            <div class="absolute mt-3 xs:ml-6 sm:ml-6 md:ml-9 lg:ml:10">
+              <input
+                class="xs:min-w-[210px] sm:min-w-[270px] md:min-w-[280px] lg:min-w-[290px] border-2 border-solid border-gray-400"
+                type="text"
+                placeholder="Write a new task"
+                value=""
+              />
+              <button
+                class="absolute ml-4 w-16 rounded-full transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 bg-orange-50 text-orange-500 font-bold text-center"
+              >
+                ok
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    <main></main>
+      <footer
+        class="w-full mt-auto bg-[#a6c1ee] h-10 rounded-t-[30px] text-center text-gray-600"
+      >
+        <p class="py-2">&copy; 2023 Gulam Kibria. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>

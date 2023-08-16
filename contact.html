@@ -25,111 +25,117 @@
   <body
     class="mx-[10px] font-[roboto,sans-serif] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] bg-no-repeat bg-fixed h-screen"
   >
-    <nav class="flex max-w-full h-28">
-      <div class="relative w-full bg-[#a6c1ee] h-28">
-        <div
-          class="transition-transform transform hover:rotate-180 relative z-50 bg-orange-500 flex rotate-45 items-center mt-[22px] mx-auto rounded-2xl w-[100px] h-[100px]"
-        >
-          <h1
-            class="transition-transform transform hover:-rotate-180 absolute text-white -rotate-45 text-center p-[15px] text-2xl mx-auto font-bold"
+    <div class="flex flex-col min-h-screen">
+      <nav class="flex max-w-full h-28">
+        <div class="relative w-full bg-[#a6c1ee] h-28">
+          <div
+            class="transition-transform transform hover:rotate-180 relative z-50 bg-orange-500 flex rotate-45 items-center mt-[22px] mx-auto rounded-2xl w-[100px] h-[100px]"
           >
-            ToDo List
-          </h1>
-        </div>
+            <h1
+              class="transition-transform transform hover:-rotate-180 absolute text-white -rotate-45 text-center p-[15px] text-2xl mx-auto font-bold"
+            >
+              ToDo List
+            </h1>
+          </div>
 
-        <div
-          class="flex absolute w-full bg-pink-200 top-8 h-22 rounded-t-[30px] items-center justify-between box-border"
-        >
-          <img src="/image/manu.png" alt="manu" class="w-14 h-14 ml-[30px]" />
+          <div
+            class="flex absolute w-full bg-pink-200 top-8 h-22 rounded-t-[30px] items-center justify-between box-border"
+          >
+            <img src="/image/manu.png" alt="manu" class="w-14 h-14 ml-[30px]" />
 
-          <img src="/image/icon.png" alt="Logo" class="w-8 h-8 mr-[30px]" />
-        </div>
-      </div>
-    </nav>
-
-    <main class="max-w-full max-h-full flex">
-      <aside class="flex relative w-2/12 justify-normal box-border">
-        <div class="sm:flex w-full flex-col box-border space-y-3">
-          <a
-            href="index.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 mt-4 p-1 font-bold w-full block text-center"
-          >
-            My Tasks</a
-          >
-          <a
-            href="completed.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Completed</a
-          >
-          <a
-            href="recycle_bin.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Recycle Bin</a
-          >
-          <a
-            href="about.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            About</a
-          >
-          <a
-            href="contact.html"
-            class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
-          >
-            Contact</a
-          >
-        </div>
-      </aside>
-
-      <section class="flex w-10/12">
-        <div
-          class="relative rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
-        >
-          <div class="container mx-auto p-10">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-              <form>
-                <div class="mb-4">
-                  <label class="block text-gray-700 font-medium">Name</label>
-                  <input
-                    type="text"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div class="mb-4">
-                  <label class="block text-gray-700 font-medium">Email</label>
-                  <input
-                    type="email"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
-                    placeholder="Your email"
-                  />
-                </div>
-                <div class="mb-4">
-                  <label class="block text-gray-700 font-medium">Message</label>
-                  <textarea
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
-                    rows="4"
-                    placeholder="Your message"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
-                >
-                  Send
-                </button>
-              </form>
-            </div>
+            <img src="/image/icon.png" alt="Logo" class="w-8 h-8 mr-[30px]" />
           </div>
         </div>
-      </section>
-    </main>
+      </nav>
 
-    <aside></aside>
+      <main class="max-w-full max-h-full flex mb-10">
+        <aside class="flex relative w-2/12 justify-normal box-border">
+          <div class="sm:flex w-full flex-col box-border space-y-3">
+            <a
+              href="index.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 mt-4 p-1 font-bold w-full block text-center"
+            >
+              My Tasks</a
+            >
+            <a
+              href="completed.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Completed</a
+            >
+            <a
+              href="recycle_bin.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Recycle Bin</a
+            >
+            <a
+              href="about.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              About</a
+            >
+            <a
+              href="contact.html"
+              class="xs:text-xs sm:text-sm md:text-lg lg:text-xl transition duration-500 ease-in-out hover:bg-orange-500 hover:text-white hover:border-blue-500 hover:drop-shadow-2xl border border-solid border-gray-400 rounded-[30px] bg-orange-50 text-orange-500 p-1 font-bold w-full block text-center"
+            >
+              Contact</a
+            >
+          </div>
+        </aside>
 
-    <main></main>
+        <section class="flex w-10/12">
+          <div
+            class="relative rounded-3xl w-5/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-52 box-border"
+          >
+            <div class="container mx-auto p-10">
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+                <form>
+                  <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Name</label>
+                    <input
+                      type="text"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-gray-700 font-medium">Email</label>
+                    <input
+                      type="email"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                      placeholder="Your email"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-gray-700 font-medium"
+                      >Message</label
+                    >
+                    <textarea
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                      rows="4"
+                      placeholder="Your message"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
+                  >
+                    Send
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="w-full mt-auto bg-[#a6c1ee] h-10 rounded-t-[30px] text-center text-gray-600"
+      >
+        <p class="py-2">&copy; 2023 Gulam Kibria. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>
