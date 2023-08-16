@@ -23,7 +23,7 @@
   </head>
 
   <body
-    class="mx-[10px] font-[roboto,sans-serif] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen"
+    class="mx-[10px] font-[roboto,sans-serif] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] bg-no-repeat bg-fixed h-screen"
   >
     <nav class="flex max-w-full h-28">
       <div class="relative w-full bg-[#a6c1ee] h-28">
@@ -83,7 +83,24 @@
         </div>
       </aside>
 
-      <section class="flex w-10/12"></section>
+      <section class="flex relative w-10/12">
+        <div
+          class="relative rounded-3xl w-6/12 xs:min-w-[320px] sm:min-w-[380px] md:min-w-[400px] lg:min-w-[420px] bg-slate-700 mt-12 xs:ml-10 sm:ml-10 md:ml-24 lg:ml-40 box-border"
+        >
+          <div class="absolute mt-3 xs:ml-6 sm:ml-6 md:ml-9 lg:ml:10">
+            <h2 class="text-xl text-white font-semibold">
+              Greetings from Gulam Kibria
+            </h2>
+            <p class="mt-5 text-white text-base">
+              Introducing a fully operational Todo App built using React Js.
+              Enjoy the flexibility to add, modify, or delete tasks. You can
+              also mark completed tasks, which will be stored separately. Tasks
+              can be sorted by both their addition date and in alphabetical
+              order.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <aside></aside>
