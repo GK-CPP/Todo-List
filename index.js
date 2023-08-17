@@ -2,6 +2,36 @@ const textButton = document.getElementById("add-task-btn");
 
 var taskArray = [];
 
+const initiateCompleted = () => {
+  const checklistImg = document.querySelectorAll(".checklistImgClass");
+  console.log("check-1");
+  console.log(checklistImg);
+
+  checklistImg.forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      console.log(event.target);
+      var checklistElement = event.target;
+      checklistDataId = checklistElement.getAttribute("data-id");
+      console.log("check-2");
+      console.log(checklistDataId);
+      console.log(taskArray[0].id);
+
+      for (let i = 0; i < taskArray.length; i++) {
+        if (taskArray[i].id == checklistDataId) {
+          taskArray[i].completed = true;
+          let _div = document.getElementById(taskArray[i].id);
+          console.log(_div);
+          if (_div != null) _div.remove();
+        }
+      }
+      let tasksString = JSON.stringify(taskArray);
+      //console.log(tasksString);
+
+      localStorage.setItem("taskId", tasksString);
+    });
+  });
+};
+
 //Element Push Function
 function elementPush(functionClass, textInput) {
   let newDiv = document.createElement("div");
@@ -9,6 +39,7 @@ function elementPush(functionClass, textInput) {
   let newDivRight = document.createElement("div");
 
   let newH1 = document.createElement("h1");
+
   let imgElement = document.createElement("img");
   let imgElementDelete = document.createElement("img");
   let imgElementEdit = document.createElement("img");
@@ -30,12 +61,11 @@ function elementPush(functionClass, textInput) {
   imgElementDelete.setAttribute("data-id-delete", textInput.id);
   imgElementDelete.classList.add("checklistImgDelete");
   imgElementDelete.classList.add("cursor-pointer");
-  imgElementDelete.setAttribute("onclick", `deleteTask(${textInput.id})`);
-
   imgElementDelete.classList.add("w-8");
   imgElementDelete.classList.add("h-8");
   imgElementDelete.classList.add("mt-[1px]");
   imgElementDelete.classList.add("mr-2");
+  imgElementDelete.setAttribute("onclick", `deleteTask(${textInput.id})`);
 
   console.log(imgElement);
 
@@ -72,6 +102,8 @@ function elementPush(functionClass, textInput) {
   newDiv.appendChild(newDivLeft);
   newDiv.appendChild(newDivRight);
   document.getElementById(functionClass).appendChild(newDiv);
+
+  initiateCompleted();
 }
 
 //textbutton click function
@@ -104,6 +136,7 @@ textButton.addEventListener("click", function () {
 });
 
 //for delete task
+
 const deleteTask = (id) => {
   const _div = document.getElementById(id);
   console.log(_div);
@@ -127,29 +160,6 @@ window.onload = function () {
     }
     //var checklistDataId = 0;
     //Find all elements with class "checklistImgClass" and add click event listener
-    const checklistImg = document.querySelectorAll(".checklistImgClass");
-    console.log("check-1");
-    console.log(checklistImg);
-
-    checklistImg.forEach(function (element) {
-      element.addEventListener("click", function (event) {
-        console.log(event.target);
-        var checklistElement = event.target;
-        checklistDataId = checklistElement.getAttribute("data-id");
-        console.log("check-2");
-        console.log(checklistDataId);
-        console.log(taskArray[0].id);
-
-        for (let i = 0; i < taskArray.length; i++) {
-          if (taskArray[i].id == checklistDataId) {
-            taskArray[i].completed = true;
-          }
-        }
-        let tasksString = JSON.stringify(taskArray);
-        //console.log(tasksString);
-
-        localStorage.setItem("taskId", tasksString);
-      });
-    });
+    initiateCompleted();
   }
 };
