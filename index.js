@@ -3,7 +3,7 @@ const textButton = document.getElementById("add-task-btn");
 var taskArray = [];
 
 //Element Push Function
-function elementPush(textInput) {
+function elementPush(functionClass, textInput) {
   let newDiv = document.createElement("div");
   let newH1 = document.createElement("h1");
   let imgElement = document.createElement("img");
@@ -12,6 +12,7 @@ function elementPush(textInput) {
   imgElement.alt = "Image description";
   imgElement.setAttribute("data-id", textInput.id);
   imgElement.classList.add("checklistImgClass");
+  imgElement.classList.add("cursor-pointer");
   //console.log("check2");
   //console.log(imgElement);
 
@@ -26,13 +27,12 @@ function elementPush(textInput) {
   newH1.innerText = textInput._value;
   newDiv.appendChild(imgElement);
   newDiv.appendChild(newH1);
-  document.getElementById("task").appendChild(newDiv);
+  document.getElementById(functionClass).appendChild(newDiv);
 }
 
 //textbutton click function
 textButton.addEventListener("click", function () {
   const textInput = document.getElementById("task-input");
-  //console.log(textInput.value.length);
   if (textInput.value.length > 0) {
     const taskValue = textInput.value;
     textInput.value = "";
@@ -47,42 +47,65 @@ textButton.addEventListener("click", function () {
 
     console.log(taskArray);
 
-    tasksString = JSON.stringify(taskArray);
+    let tasksString = JSON.stringify(taskArray);
     //console.log(tasksString);
 
     localStorage.setItem("taskId", tasksString);
-    //console.log(tempObj);
-    elementPush(tempObj);
+    console.log("stroaged");
+    console.log(tempObj);
+    elementPush("task", tempObj);
   } else {
     alert("Please write something");
   }
 });
 
-// Find all elements with class "checklistImgClass" and add click event listener
-
-// Local Storage load function
+//Local Storage load function
 window.onload = function () {
   let tasksString = localStorage.getItem("taskId");
   if (tasksString) {
     taskArray = JSON.parse(tasksString);
-    console.log(taskArray);
-
     for (let i = 0; i < taskArray.length; i++) {
-      elementPush(taskArray[i]);
+      elementPush("task", taskArray[i]);
     }
-  }
+    //var checklistDataId = 0;
+    //Find all elements with class "checklistImgClass" and add click event listener
+    const checklistImg = document.querySelectorAll(".checklistImgClass");
+    console.log("check-1");
+    console.log(checklistImg);
 
-  const checklistImg = document.querySelectorAll(".checklistImgClass");
-  // console.log("check->");
-  // console.log(checklistImg);
-  checklistImg.forEach(function (element) {
-    // console.log(element);
-    element.addEventListener("click", function (event) {
-      console.log(event.target);
-      var checklistElement = event.target;
-      var checklistDataId = checklistElement.getAttribute("data-id");
-      console.log("check");
-      console.log(checklistDataId);
+    checklistImg.forEach(function (element) {
+      element.addEventListener("click", function (event) {
+        console.log(event.target);
+        var checklistElement = event.target;
+        checklistDataId = checklistElement.getAttribute("data-id");
+        console.log("check-2");
+        console.log(checklistDataId);
+        console.log(taskArray[0].id);
+
+        for (let i = 0; i < taskArray.length; i++) {
+          if (taskArray[i].id == checklistDataId) {
+            taskArray[i].completed = true;
+          }
+        }
+        let tasksString = JSON.stringify(taskArray);
+        //console.log(tasksString);
+
+        localStorage.setItem("taskId", tasksString);
+      });
     });
-  });
+  }
 };
+
+//     console.log();
+//     for (let i = 0; i < taskArray.length; i++) {
+//       if (taskArray[i].id == checklistDataId) {
+//         taskArray[i].completed = true;
+//       }
+//       if (taskArray[i].completed == false) {
+//         elementPush("task", taskArray[i]);
+//       } else {
+//         elementPush("task-completed", taskArray[i]);
+//       }
+//     }
+//   }
+// };
