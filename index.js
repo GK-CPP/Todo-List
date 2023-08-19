@@ -2,6 +2,9 @@ const textButton = document.getElementById("add-task-btn");
 
 var taskArray = [];
 
+var editFlag = 0;
+var editGlobalId = 0;
+
 const initiateCompleted = () => {
   const checklistImg = document.querySelectorAll(".checklistImgClass");
   console.log("check-1");
@@ -107,29 +110,37 @@ function elementPush(functionClass, textInput) {
 //textbutton click function
 textButton.addEventListener("click", function () {
   const textInput = document.getElementById("task-input");
-  if (textInput.value.length > 0) {
-    const taskValue = textInput.value;
-    textInput.value = "";
-
-    let tempObj = {
-      id: Date.now(),
-      _value: taskValue,
-      completed: 0,
-    };
-
-    taskArray.push(tempObj);
-
-    console.log(taskArray);
-
-    let tasksString = JSON.stringify(taskArray);
-    //console.log(tasksString);
-
-    localStorage.setItem("taskId", tasksString);
-    console.log("stroaged");
-    console.log(tempObj);
-    elementPush("task", tempObj);
+  if (editFlag == 1) {
+    if (textInput.value.length > 0) {
+      const taskValue = textInput.value;
+      editFlag = 0;
+      passID_fun();
+    }
   } else {
-    alert("Please write something");
+    if (textInput.value.length > 0) {
+      const taskValue = textInput.value;
+      textInput.value = "";
+
+      let tempObj = {
+        id: Date.now(),
+        _value: taskValue,
+        completed: 0,
+      };
+
+      taskArray.push(tempObj);
+
+      console.log(taskArray);
+
+      let tasksString = JSON.stringify(taskArray);
+      //console.log(tasksString);
+
+      localStorage.setItem("taskId", tasksString);
+      console.log("stroaged");
+      console.log(tempObj);
+      elementPush("task", tempObj);
+    } else {
+      alert("Please write something");
+    }
   }
 });
 
@@ -152,21 +163,34 @@ const deleteTask = (id) => {
 
 //for edit task
 
-// const editTask = (id) => {
-//   const _div = document.getElementById(id);
-//   console.log(_div);
-//   //_div.remove();
+const editTask = (id) => {
+  editGlobalId = id;
+  editFlag = 1;
+  const _div = document.getElementById(id);
+  let newText = _div.children[0].children[1].innerText;
+  console.log("task-edit1", _div.children[0].children[1].innerHTML);
+  const textInput = document.getElementById("task-input");
+  textInput.value = newText;
+};
 
-//   let tasksString = localStorage.getItem("taskId");
-//   taskArray = JSON.parse(tasksString);
-//   //taskArray = taskArray.filter((taskArrayId) => taskArrayId.id != id);
-//   for (let i = 0; i < taskArray.length; i++) {
-//     if (taskArray[i].id == id) {
-//       taskArray[i]._value = newText;
-//     }
-//   }
-//   localStorage.setItem("taskId", JSON.stringify(taskArray));
-// };
+const passID_fun = () => {
+  const _div = document.getElementById(editGlobalId);
+  const textInput = document.getElementById("task-input");
+  _div.children[0].children[1].innerText = textInput.value;
+
+  console.log("task-edit2", textInput.value);
+  let tasksString = localStorage.getItem("taskId");
+  taskArray = JSON.parse(tasksString);
+
+  for (let i = 0; i < taskArray.length; i++) {
+    if (taskArray[i].id == editGlobalId) {
+      taskArray[i]._value = textInput.value;
+    }
+  }
+  localStorage.setItem("taskId", JSON.stringify(taskArray));
+  textInput.value = "";
+  //console.log("task-edit", _div.children[0].children[1].innerHTML);
+};
 
 //Local Storage load function
 window.onload = function () {
