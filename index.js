@@ -18,7 +18,7 @@ const initiateCompleted = () => {
 
       for (let i = 0; i < taskArray.length; i++) {
         if (taskArray[i].id == checklistDataId) {
-          taskArray[i].completed = true;
+          taskArray[i].completed = 1;
           let _div = document.getElementById(taskArray[i].id);
           console.log(_div);
           if (_div != null) _div.remove();
@@ -67,18 +67,16 @@ function elementPush(functionClass, textInput) {
   imgElementDelete.classList.add("mr-2");
   imgElementDelete.setAttribute("onclick", `deleteTask(${textInput.id})`);
 
-  console.log(imgElement);
-
   imgElementEdit.src = "image/edit.png";
   imgElementEdit.alt = "Image description edit";
   imgElementEdit.setAttribute("data-id-edit", textInput.id);
   imgElementEdit.classList.add("checklistImgEdit");
   imgElementEdit.classList.add("cursor-pointer");
-
   imgElementEdit.classList.add("w-8");
   imgElementEdit.classList.add("h-8");
   imgElementEdit.classList.add("mt-[1px]");
   imgElementEdit.classList.add("mr-2");
+  imgElementEdit.setAttribute("onclick", `editTask(${textInput.id})`);
 
   newDiv.classList.add("flex");
   newDiv.classList.add("rounded-3xl");
@@ -116,7 +114,7 @@ textButton.addEventListener("click", function () {
     let tempObj = {
       id: Date.now(),
       _value: taskValue,
-      completed: false,
+      completed: 0,
     };
 
     taskArray.push(tempObj);
@@ -143,9 +141,32 @@ const deleteTask = (id) => {
   _div.remove();
   let tasksString = localStorage.getItem("taskId");
   taskArray = JSON.parse(tasksString);
-  taskArray = taskArray.filter((taskArrayId) => taskArrayId.id != id);
+  //taskArray = taskArray.filter((taskArrayId) => taskArrayId.id != id);
+  for (let i = 0; i < taskArray.length; i++) {
+    if (taskArray[i].id == id) {
+      taskArray[i].completed = -1;
+    }
+  }
   localStorage.setItem("taskId", JSON.stringify(taskArray));
 };
+
+//for edit task
+
+// const editTask = (id) => {
+//   const _div = document.getElementById(id);
+//   console.log(_div);
+//   //_div.remove();
+
+//   let tasksString = localStorage.getItem("taskId");
+//   taskArray = JSON.parse(tasksString);
+//   //taskArray = taskArray.filter((taskArrayId) => taskArrayId.id != id);
+//   for (let i = 0; i < taskArray.length; i++) {
+//     if (taskArray[i].id == id) {
+//       taskArray[i]._value = newText;
+//     }
+//   }
+//   localStorage.setItem("taskId", JSON.stringify(taskArray));
+// };
 
 //Local Storage load function
 window.onload = function () {
@@ -153,7 +174,7 @@ window.onload = function () {
   if (tasksString) {
     taskArray = JSON.parse(tasksString);
     for (let i = 0; i < taskArray.length; i++) {
-      if (taskArray[i].completed == false) {
+      if (taskArray[i].completed == 0) {
         //console.log("task-33", taskArray[i].completed);
         elementPush("task", taskArray[i]);
       }

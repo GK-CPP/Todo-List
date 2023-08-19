@@ -8,7 +8,7 @@ function elementPush(functionClass, textInput) {
 
   imgElement.src = "image/checklist.png";
   imgElement.alt = "Image description";
-  imgElement.setAttribute("data-id", textInput.id);
+  imgElement.setAttribute("data-id-check", textInput.id);
   imgElement.classList.add("checklistImgClass");
   console.log("check2");
   console.log(imgElement);
@@ -33,7 +33,7 @@ window.onload = function () {
   if (tasksString) {
     taskArray = JSON.parse(tasksString);
     for (let i = 0; i < taskArray.length; i++) {
-      if (taskArray[i].completed == true) {
+      if (taskArray[i].completed == 1) {
         elementPush("task-completed", taskArray[i]);
         console.log(taskArray[i]);
       }
